@@ -1,0 +1,2 @@
+# archinstall
+after arch-chroot
