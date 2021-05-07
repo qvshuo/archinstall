@@ -19,6 +19,9 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 nuc.localdomain nuc" >> /etc/hosts
 
+# root密码
+echo root:password | chpasswd
+
 # 安装引导程序
 bootctl --path=/boot install
 echo "timeout  0" > /boot/loader/loader.conf
@@ -27,4 +30,9 @@ echo "title    Arch Linux" > /boot/loader/entries/arch.conf
 echo "linux    /vmlinuz-linux" >> /boot/loader/entries/arch.conf
 echo "initrd   /intel-ucode.img" >> /boot/loader/entries/arch.conf
 echo "initrd   /initramfs-linux.img" >> /boot/loader/entries/arch.conf
-echo "options  root=PARTUUID= rw rootflags=subvol=/" >> /boot/loader/entries/arch.conf
+echo "options  root="LABEL=archlinux" rw rootflags=subvol=@" >> /boot/loader/entries/arch.conf
+
+# 普通用户
+useradd -m huizhi
+echo huizhi:password | chpasswd
+echo "huizhi ALL=(ALL) ALL" >> /etc/sudoers.d/huizhi
