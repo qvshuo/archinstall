@@ -44,14 +44,18 @@ quit
 
 `./gnome.sh`
 
-## Install software
+## Config mirror and install some software
 
 `su`
 
-`./software.sh`
+`./software_1.sh`
 
-## Install software from AUR
+## Reboot again
 
-`su huizhi`
+`exit`
 
-`./software_aur.sh`
+`reboot`
+
+## Install software from AUR and flathub
+
+`./software_2.sh`
