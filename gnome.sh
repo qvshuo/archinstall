@@ -3,7 +3,7 @@
 # 显卡驱动
 pacman -S --noconfirm mesa vulkan-intel intel-media-driver
 
-# 蓝牙支持
+# 蓝牙驱动
 pacman -S --noconfirm bluez bluez-utils
 
 # Gnome
@@ -19,6 +19,6 @@ pacman -S --noconfirm ttf-sarasa-gothic adobe-source-han-serif-otc-fonts
 # 输入法
 pacman -S --noconfirm ibus ibus-rime ibus-anthy
 
-# 启动相关服务
+# 启动所需服务
 systemctl enable gdm
 systemctl enable bluetooth

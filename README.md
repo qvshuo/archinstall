@@ -1,6 +1,6 @@
 # archinstall
 
-## Network
+## Connect to network
 
 ```
 iwctl
@@ -11,17 +11,20 @@ station wlan0 connect SSID
 quit
 ```
 
-## Install
+## Install git and clone this repo
 
-`git clone https://github.com/qvshuo/archinstall.git'
+`pacman -S git`
+`git clone https://github.com/qvshuo/archinstall.git`
+
+## Install base system
 
 `./install.sh`
 
-## Chroot
+## Chroot to new system
 
 `arch-chroot /mnt`
 
-## Config
+## Config something
 
 `./config.sh`
 
@@ -31,50 +34,23 @@ quit
 
 `reboot`
 
-## Network again
+## Connect to network again
 
 `systemctl enable --now NetworkManager`
 
 `nmtui`
 
-## Desktop Environment
+## Install Gnome desktop environment
 
 `./gnome.sh`
 
-## Reboot again
-
-`reboot`
-
-## Mirrorlist
-
-`sudo nvim /etc/pacman.d/mirrorlist`
-
-```
-https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch
-https://mirrors.xjtu.edu.cn/archlinux/$repo/os/$arch 
-https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch
-```
-
-## Archlinuxcn
-
-`sudo nvim /etc/pacman.conf`
-
-```
-[archlinuxcn]
-Server = https://mirrors.xjtu.edu.cn/archlinuxcn/$arch
-```
-
-`pacman -Syy --noconfirm`
-
-`pacman -S --noconfirm archlinuxcn-keyring`
-
-## Software
+## Install software
 
 `su`
 
 `./software.sh`
 
-## Software_aur
+## Install software from AUR
 
 `su huizhi`
 

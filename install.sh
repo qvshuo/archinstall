@@ -32,6 +32,5 @@ mount /dev/nvme0n1p3 /mnt/home
 # 安装系统基础软件包
 pacstrap /mnt base base-devel linux linux-firmware dosfstools btrfs-progs ntfs-3g intel-ucode efibootmgr fish networkmanager neovim man-db man-pages texinfo git
 
-# 生成并检验fstab
+# 生成fstab
 genfstab -U /mnt >> /mnt/etc/fstab
-cat /mnt/etc/fstab
