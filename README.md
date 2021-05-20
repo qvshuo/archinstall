@@ -1,6 +1,6 @@
 # archinstall
 
-## Connect to network
+## 1. Connect to network
 
 ```
 iwctl
@@ -11,51 +11,40 @@ station wlan0 connect SSID
 quit
 ```
 
-## Install git and clone this repo
+## 2. Install git and clone this repo
 
-`pacman -S git`
+`pacman -Sy git`
+
 `git clone https://github.com/qvshuo/archinstall.git`
 
-## Install base system
+## 3. Install base system
 
-`./install.sh`
+`./1.sh`
 
-## Chroot to new system
+## 4. Chroot to new system
 
 `arch-chroot /mnt`
 
-## Config something
+## 5. Config something
 
-`./config.sh`
+`./2.sh`
 
-## Reboot
+## 6. Reboot
 
 `exit`
 
-`reboot`
+`systemctl reboot`
 
-## Connect to network again
+## 7. Connect to network again
 
 `systemctl enable --now NetworkManager`
 
 `nmtui`
 
-## Install Gnome desktop environment
+## 8. Install Gnome desktop environment, config mirrorlist and install some software, then reboot again
 
-`./gnome.sh`
+`./3.sh`
 
-## Config mirror and install some software
+## 9. Install software from AUR
 
-`su`
-
-`./software_1.sh`
-
-## Reboot again
-
-`exit`
-
-`reboot`
-
-## Install software from AUR and flathub
-
-`./software_2.sh`
+`./4.sh`

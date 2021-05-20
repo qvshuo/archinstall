@@ -15,7 +15,7 @@ btrfs subvolume create /mnt/@
 # 卸载根分区
 umount /mnt
 # 重新挂载根分区
-mount -t btrfs -o compress=zstd,subvol=@ LABEL=archlinux /dev/nvme0n1p2 /mnt
+mount -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt
 
 # 格式化ESP分区
 mkfs.vfat /dev/nvme0n1p1
@@ -24,7 +24,7 @@ mkdir /mnt/boot
 mount /dev/nvme0n1p1 /mnt/boot
 
 # 格式化资料分区
-mkfs.ext4 -F /dev/nvme0n1p3
+# mkfs.ext4 -F /dev/nvme0n1p3
 # 挂载资料分区
 mkdir /mnt/home
 mount /dev/nvme0n1p3 /mnt/home
