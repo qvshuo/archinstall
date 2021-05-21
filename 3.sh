@@ -46,7 +46,7 @@ pacman -S --noconfirm deadbeef celluloid obs-studio gimp flowblade
 pacman -S --noconfirm hugo drawio-desktop-bin typora
 pacman -S --noconfirm git visual-studio-code-bin
 pacman -S --noconfirm android-tools scrcpy
-pacman -S --noconfirm materia-gtk-theme gtk-engine-murrine
+pacman -S --noconfirm gtk-engine-murrine sassc imagemagick dialog optipnginkscape
 pacman -S --noconfirm neofetch
 
 # 重启
