@@ -3,9 +3,6 @@
 # 开启时间同步
 timedatectl set-ntp true
 
-# 显示当前分区
-lsblk
-
 # 格式化根分区
 mkfs.btrfs -f -L 'archlinux' /dev/nvme0n1p2
 # 挂载根分区
